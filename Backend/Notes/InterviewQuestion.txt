@@ -1,0 +1,137 @@
+1.Why $or is better?
+
+👉 Because it reduces database calls from 2 queries to 1 query, improving performance.
+
+2. what is crypto and why we use 
+👉"Node.js crypto module security ke liye use hota hai. Yeh internally OpenSSL library use karta hai.
+Hashing me yeh input (jaise password) ko ek fixed length code me convert kar deta hai using algorithms like SHA-256. Hashing one-way hoti hai, matlab usko wapas original value me convert nahi kar sakte.
+Encryption me data ko secret key ki help se lock kiya jata hai. Agar symmetric encryption ho to same key se unlock hota hai (AES), aur agar asymmetric ho to public-private key pair use hota hai (RSA)."
+“bcrypt is better than the normal crypto hashing functions like SHA-256 for storing passwords because it is specifically designed for password security.
+First, bcrypt automatically adds a salt to each password, which ensures that even if two users have the same password, their hashes will be different. This protects against rainbow table attacks.
+Second, bcrypt is intentionally slow and uses a cost factor. This makes brute-force attacks much harder because each password guess takes more time to process.
+On the other hand, crypto hashing functions like SHA-256 are very fast and are designed for general-purpose hashing, not for password storage. Fast hashing is good for data integrity, but not safe for passwords.”
+
+3. what is jsonwebToken  why we use or internal working 
+👉.“JWT is a stateless authentication mechanism where the server generates a signed token after login. The client sends this token in future requests, and the server verifies it using a secret key.”
+
+“jsonwebtoken (JWT) is used for authentication and secure data transmission between client and server. It generates a token after successful login, which the client sends with future requests to access protected routes.
+
+A JWT has three parts: Header, Payload, and Signature.
+
+The header contains the algorithm type, the payload contains user data like user ID, and the signature ensures the token has not been tampered with.
+
+The server signs the token using a secret key, and when the client sends the token back, the server verifies it using the same secret key.”
+
+4.What is stateless authentication?
+👉
+“Stateless authentication is an authentication method where the server does not store any session information about the user.
+
+5.what is session and JWT
+👉
+Sessions are stateful authentication, where the server stores user session data (usually in memory or database) and sends a session ID to the client. The client sends this session ID with every request.
+
+JWT is stateless authentication, where the server does not store session data. Instead, all user information is stored inside the token itself, and the client sends that token with every request. The server verifies the token using a secret key.”
+
+6.where should we store jst ?
+👉
+“JWT should ideally be stored in an HTTP-only, secure cookie. This is recommended because HTTP-only cookies cannot be accessed by JavaScript, which helps protect against XSS attacks.
+
+“JWT should be stored in an HTTP-only secure cookie to protect it from XSS attacks.”
+Because localStorage is accessible through JavaScript, so if an attacker injects malicious script (XSS), they can steal the token.”
+
+
+ what is controller ...?
+
+ and what s middleware ...?
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  Cloud storage provider 
+  -- S3
+  -- imagekit
+  -- cloudinary   
