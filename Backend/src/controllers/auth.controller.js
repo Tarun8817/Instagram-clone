@@ -127,7 +127,24 @@ async function loginController(req,res){
     })
 }
 
+async function getMeController(req, res) {
+  try {
+    const user = await userModel
+      .findById(req.user.id)
+      .select("-password");
+
+    res.status(200).json({
+      message: "User fetched successfully",
+      user,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: "Server error",
+    });
+  }
+}
+
 
 module.exports  = {
-    registerController,loginController
+    registerController,loginController,getMeController
 }
