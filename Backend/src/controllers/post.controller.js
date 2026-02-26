@@ -1,7 +1,8 @@
 const postModel = require('../model/post.model');
 const ImageKit = require('@imagekit/nodejs');
 const { toFile } = require('@imagekit/nodejs');
-const likeModel = require('../model/like.model')
+const likeModel = require('../model/like.model');
+
 // Configure ImageKit SDK with environment variables
 const imagekit = new ImageKit({
     publicKey: process.env.IMAGEKIT_PUBLIC_KEY,
@@ -127,9 +128,21 @@ async function likePostController(req,res){
     })
 }
 
+async function getFeedController(req,res){
+    const posts = await postModel
+  .find()
+  .populate("user", "-password")
+
+    res.status(200).json({
+        message:"post fetched successfully",
+        posts
+    })
+}
+
 module.exports = {
   createPostController,
   getPostController,
   getPostDetailsController,
-  likePostController
+  likePostController,
+  getFeedController
 };

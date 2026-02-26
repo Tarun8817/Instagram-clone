@@ -36,6 +36,15 @@ postRouter.get("/details/:postId", identifyUser, postController.getPostDetailsCo
  * @description like a post with the id provided in the request params
 */
 
+
+/**
+ *  @route GET /api/posts/feed
+ *  @description  get all the post created in the db
+ *  @access private
+*/
+
+postRouter.get("/feed",identifyUser,postController.getFeedController)
+
 postRouter.post(
   "/like/:postId",
   identifyUser,
